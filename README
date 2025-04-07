@@ -1,13 +1,6 @@
 登录账号密码可在/resources/information/login.txt下修改
 admin   123456
 
-PyQt5版本 5.15.9
-Python version: 3.9.13
-sklearn 1.5.1
-TensorFlow version: 2.19.0
-Numpy version: 2.0.2
-Pandas version: 2.2.3
-
 软件所使用爬虫工具为github开源项目 Chrome js插件
 以下为链接
 https://github.com/prinsss/twitter-web-exporter/releases

@@ -9,6 +9,9 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.naive_bayes import GaussianNB, ComplementNB
 
+# import sys,os
+# sys.path.append(os.path.abspath(os.path.join(os.getcwd(), "/..")))
+
 import tensorflow as tf
 from tensorflow import feature_column
 from tensorflow.keras import layers

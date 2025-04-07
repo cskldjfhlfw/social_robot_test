@@ -10,10 +10,12 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         self.initUI()
-
+        with open('./resources/QSS-master/MacOS.qss') as f:
+            qss = f.read()
+            self.setStyleSheet(qss)
     def initUI(self):
         self.setWindowTitle('社交机器人检测')
-        self.setWindowIcon(QIcon('../resources/pictures/icon.png'))
+        self.setWindowIcon(QIcon('./resources/pictures/icon.png'))
         # 创建中心部件
         central_widget = QWidget()
         self.setCentralWidget(central_widget)
@@ -218,6 +220,7 @@ class MainWindow(QMainWindow):
             result_text,
             QMessageBox.Ok
         )
+
 
 
 if __name__ == '__main__':

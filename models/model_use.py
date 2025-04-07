@@ -19,13 +19,13 @@ class Predictor:
         :return: 包含所有模型的字典
         """
         model_paths = {
-            'svc_linear': '../resources/models/SVC_linear_classifier_model.pkl',
-            'svc_poly': '../resources/models/SVC_poly_classifier_model.pkl',
-            'rfc_model': '../resources/models/rfc_model_model.pkl',
-            'logreg_model': '../resources/models/logreg_model_model.pkl',
-            'n_bayes': '../resources/models/n_bayes_model.pkl',
-            'cn_bayes': '../resources/models/cn_bayes_model.pkl',
-            'neural_network': '../resources/models/neural_network_model.keras'
+            'svc_linear': './resources/models/SVC_linear_classifier_model.pkl',
+            'svc_poly': './resources/models/SVC_poly_classifier_model.pkl',
+            'rfc_model': './resources/models/rfc_model_model.pkl',
+            'logreg_model': './resources/models/logreg_model_model.pkl',
+            'n_bayes': './resources/models/n_bayes_model.pkl',
+            'cn_bayes': './resources/models/cn_bayes_model.pkl',
+            'neural_network': './resources/models/neural_network_model.keras'
         }
         models = {}
         for model_name, path in model_paths.items():
@@ -183,9 +183,9 @@ class Predictor:
 
 if __name__ == '__main__':
     print("埃隆马斯克")
-    predictor1 = Predictor(r"../spider/test_埃隆.csv", 1095, 220048254)
+    predictor1 = Predictor(r"./spider/test_埃隆.csv", 1095, 220048254)
     predictor1.get_result()
 
     print("自由战士🪖舒少波")
-    predictor2 = Predictor(r"../spider/test_自由战士.csv", 24, 148)
+    predictor2 = Predictor(r"./spider/test_自由战士.csv", 24, 148)
     predictor2.get_result()    

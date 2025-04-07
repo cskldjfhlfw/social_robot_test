@@ -1,4 +1,4 @@
-from main_window import MainWindow
+from GUI.main_window import MainWindow
 import sys
 from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QLabel, QLineEdit, QPushButton, QMessageBox, QHBoxLayout
 from PyQt5.QtGui import QIcon, QRegExpValidator,  QPixmap, QBrush, QPalette, QFont
@@ -7,16 +7,17 @@ class LoginWindow(QWidget):
     def __init__(self):
         super(QWidget, self).__init__()
         self.initUI()
+
     def initUI(self):
         self.setWindowTitle('Login')
         self.setWindowFlags(Qt.FramelessWindowHint)
 
-        self.setWindowIcon(QIcon('../resources/pictures/icon.png'))
+        self.setWindowIcon(QIcon('./resources/pictures/icon.png'))
         # self.resize(928, 630)
         self.setFixedSize(500, 300)
         palette = self.palette()
         # palette.setColor(self.backgroundRole(), Qt.red)
-        palette.setBrush(QPalette.Background,QBrush(QPixmap("../resources/pictures/login_background3.png")))
+        palette.setBrush(QPalette.Background,QBrush(QPixmap("./resources/pictures/login_background3.png")))
         self.setPalette(palette)
 
         # 创建布局
@@ -87,7 +88,7 @@ class LoginWindow(QWidget):
     def login(self):
         username = self.username_input.text()
         password = self.password_input.text()
-        data_temp = open("../resources/information/login", "r")
+        data_temp = open("./resources/information/login", "r")
         for line in data_temp:
             username_temp, password_temp = line.strip().split(',')
             if username == username_temp and password == password_temp:
@@ -104,9 +105,6 @@ class LoginWindow(QWidget):
 if __name__ == '__main__':
 
     app = QApplication(sys.argv)
-    with open('../resources/QSS-master/MacOS.qss') as f:
-        qss = f.read()
-        app.setStyleSheet(qss)
     ex = LoginWindow()
     ex.show()
     sys.exit(app.exec_())
